@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.tootiyesolutions.tpmazembe.view.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionDetailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_results"
+        android:name="com.tootiyesolutions.tpmazembe.view.ResultsFragment"
+        android:label="Results"
+        tools:layout="@layout/fragment_results" />
+
+    <fragment
+        android:id="@+id/navigation_fixtures"
+        android:name="com.tootiyesolutions.tpmazembe.view.FixturesFragment"
+        android:label="Fixtures"
+        tools:layout="@layout/fragment_fixtures" />
+
+    <fragment
+        android:id="@+id/navigation_table"
+        android:name="com.tootiyesolutions.tpmazembe.view.TableFragment"
+        android:label="Table"
+        tools:layout="@layout/fragment_table" />
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.tootiyesolutions.tpmazembe.view.DetailActivity"
+        android:label="DetailActivity"
+        tools:layout="@layout/activity_detail">
+        <argument android:name="articleUuid"
+            app:argType="integer"
+            android:defaultValue="2" />
+    </activity>
+</navigation>

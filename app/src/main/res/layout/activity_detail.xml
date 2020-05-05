@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+    <variable
+        name="article"
+        type="com.tootiyesolutions.tpmazembe.model.Article" />
+</data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DetailActivity">
+
+    <ImageView
+        android:id="@+id/articleImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:imageUrl="@{article.imageUrl}"
+        android:scaleType="fitCenter"
+        android:minHeight="200dp" />
+
+    <TextView
+        android:id="@+id/articleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/articleImage"
+        android:text="@{article.articleTitle}"
+        style="@style/Title"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp" />
+
+    <TextView
+        android:id="@+id/articleDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/articleTitle"
+        android:text="@{article.articleDate}"
+        style="@style/Text"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp" />
+
+    <TextView
+        android:id="@+id/articleContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/articleDate"
+        android:text="@{article.articleContent}"
+        style="@style/Text"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp" />
+
+</RelativeLayout>
+</layout>

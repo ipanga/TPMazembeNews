@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="article"
+            type="com.tootiyesolutions.tpmazembe.model.Article" />
+        <variable
+            name="listener"
+            type="com.tootiyesolutions.tpmazembe.view.ArticleClickListener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:onClick="@{listener::onArticleClicked}">
+
+        <TextView
+            android:id="@+id/articleId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@{String.valueOf(article.uuid)}"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:scaleType="centerCrop"
+            android:imageUrl="@{article.imageUrl}"
+            android:padding="4dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{article.articleTitle}" />
+
+            <TextView
+                android:id="@+id/lifespan"
+                style="@style/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{article.articleDate}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
